@@ -7,5 +7,7 @@ app.get('/',(req,res)=>{
     res.status(200).send({message:'Welcome to the support desk API'})
 })
 
+app.use('/api/users',require('./routes/userRoutes'))
+
 app.listen(PORT,()=>console.log(`Server started on port ${PORT}`))
 
