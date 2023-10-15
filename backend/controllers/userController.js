@@ -1,11 +1,13 @@
 const asyncHandler=require('express-async-handler')
+// const asyncHandler = require('express-async-handler');
+
 
 // @desc Register a new user
 // @route /api/users
 // @access Public
 const registerUser=asyncHandler(async(req,res)=>{
     const{name,email,password} =req.body
-    
+
 
     //Validation
     if(!name|| !email||!password){
