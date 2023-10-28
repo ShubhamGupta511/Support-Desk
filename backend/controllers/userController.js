@@ -55,7 +55,14 @@ const registerUser=asyncHandler(async(req,res)=>{
 // @route /api/users/login
 // @access Public
 const loginUser=asyncHandler(async(req,res)=>{
-    res.send('Login Route')
+    const {email,password}=req.body
+
+    const user=await User.findOne({email})
+
+    //Check user and passwords match
+    if(user &&( await bcrypt.compare(password,user.password))){
+        res.json
+    }
 })
 
 module.exports={
