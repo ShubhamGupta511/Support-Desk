@@ -1,5 +1,4 @@
 const asyncHandler=require('express-async-handler')
-// const asyncHandler = require('express-async-handler');
 const bcrypt=require('bcryptjs')
 const User=require('../models/userModel')
 
@@ -57,16 +56,7 @@ const registerUser=asyncHandler(async(req,res)=>{
 // @route /api/users/login
 // @access Public
 const loginUser=asyncHandler(async(req,res)=>{
-<<<<<<< HEAD
-    const {email,password}=req.body
 
-    const user=await User.findOne({email})
-
-    //Check user and passwords match
-    if(user &&( await bcrypt.compare(password,user.password))){
-        res.json
-    }
-=======
     const {email,password}=req.body;
 
     const user=await User.findOne({email});
@@ -83,7 +73,6 @@ const loginUser=asyncHandler(async(req,res)=>{
         throw new Error('Invalid credentials')
       }
 
->>>>>>> b4ec5240c92c9d9a5e370a6dbfbb8d315c5d3b4c
 })
 
 
